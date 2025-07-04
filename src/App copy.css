@@ -1,0 +1,175 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  /* background-color: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; */
+
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 637px;
+
+position: absolute;
+width: 1312px;
+height: 56px;
+left: 34px;
+top: 96px;
+}
+
+header img {
+  height: 40px;
+}
+
+header input[type="search"] {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-top: 10px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
+}
+
+table th {
+  background-color: #f9f9f9;
+  color: #333333;
+}
+
+table td {
+  background-color: #ffffff;
+}
+
+.status-active {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.status-inactive {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.actions {
+  text-align: center;
+}
+
+.actions img {
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pagination span {
+  color: #333333;
+}
+
+.pagination select {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  header input[type="search"] {
+    width: 100%;
+  }
+
+  .filters select {
+    width: 100%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  table th,
+  table td {
+    font-size: 13px;
+  }
+}

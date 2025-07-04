@@ -1,0 +1,196 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #f3f3f3;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Buttons */
+td button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s;
+}
+
+/* Status Button */
+/* td button:nth-of-type(1) {
+  background-color: #e0f8ea;
+  color: #0a7d36;
+} */
+
+.badge {
+  display: inline-block;
+  /* padding: 4px 10px; */
+  /* border-radius: 12px; */
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  min-width: 60px;
+}
+
+/* Green for Active */
+.badge.active {
+   background-color: #c7e2d3; 
+  color: #0a7d36;
+}
+
+/* Gray for Inactive */
+.badge.inactive {
+  background-color: #dbd0d0ad;
+  color: #666;
+}
+
+/* Checkbox Styling */
+td input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+/* Camera Name with Status Dot */
+td .camera-name {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  color: #2a7ae2;
+  text-decoration: none;
+}
+
+td .camera-name:hover {
+  text-decoration: underline;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-dot.green {
+  background-color: #00c853;
+}
+
+.status-dot.red {
+  background-color: #d50000;
+}
+
+/* Health Badge Container */
+.health-badge {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--badge-color) 0% 75%, 
+    #ddd 75% 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Inner Circle to Create Ring Effect */
+.health-badge::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Health Letter Inside */
+.health-badge span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Color Variables Based on Status */
+.health-badge.green {
+  --badge-color: #00c853;
+}
+
+.health-badge.orange {
+  --badge-color: #ff9800;
+}
+
+.health-badge.gray {
+  --badge-color: #bbb;
+}
+
+
+/* Gray Border for "-" */
+.health-badge.gray {
+  border-color: #bbb;
+  color: #999;
+}
+
+
+
+td button:nth-of-type(1):hover {
+  background-color: #c9f2dc;
+}
+
+/* Delete Button */
+td button:nth-of-type(2) {
+  background-color: #fce2e2;
+  color: #b10000;
+  margin-left: 6px;
+}
+
+td button:nth-of-type(2):hover {
+  background-color: #f8cccc;
+}
+
+/* Responsive Table (Stacked layout on mobile) */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    background-color: #fff;
+  }
+
+  td {
+    padding: 8px 0;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #555;
+    margin-bottom: 4px;
+  }
+}
