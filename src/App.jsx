@@ -6,7 +6,7 @@ import SearchBar from "./components/SearchBar";
 import FilterControls from "./components/FilterControl";
 import CameraTable from "./components/CameraTable";
 import Pagination from "./components/Pagination";
-import BrandLogo from "./assets/BrandLogo.svg"
+import BrandLogo from "./assets/BrandLogo.svg";
 import Search from "./assets/icon.svg";
 
 const CameraDashboard = () => {
@@ -49,7 +49,10 @@ const CameraDashboard = () => {
 
   return (
     <div className="container">
-      <div className="logo-container"> <img src={BrandLogo} alt="BrandLogo"  className="brandLogo"/></div>
+      <div className="logo-container">
+        {" "}
+        <img src={BrandLogo} alt="BrandLogo" className="brandLogo" />
+      </div>
       <div className="header">
         <div>
           <div>
@@ -57,7 +60,7 @@ const CameraDashboard = () => {
             <p>Manage your cameras here</p>
           </div>
 
-           <div
+          <div
             className="filters"
             style={{ display: "flex", marginBottom: 16 }}
           >
@@ -69,14 +72,12 @@ const CameraDashboard = () => {
               locations={uniqueLocations}
             />
           </div>
-         
         </div>
-        
+
         <div className="controls">
-         
-           <div className="search">
-              <input type="text" placeholder="Search" />
-              <img src={Search} alt=""/>
+          <div className="search">
+            <SearchBar searchTerm={searchTerm} onSearch={setSearchTerm} />
+            <img src={Search} alt=""/>
           </div>
         </div>
       </div>
@@ -89,8 +90,8 @@ const CameraDashboard = () => {
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={setCurrentPage}
-        itemsPerPage = {itemsPerPage}
-        totalItems = {totalItems}
+        itemsPerPage={itemsPerPage}
+        totalItems={totalItems}
       />
     </div>
   );
